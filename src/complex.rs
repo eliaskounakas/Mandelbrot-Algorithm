@@ -1,9 +1,9 @@
 use std::ops::{Add, Mul};
 
 #[derive(Copy, Clone)]
-struct Complex {
-  re: f64,
-  im: f64,
+pub struct Complex {
+  pub re: f64,
+  pub im: f64,
 }
 
 impl Add for Complex {
@@ -29,7 +29,7 @@ impl Mul for Complex {
 }
 
 impl Complex {
-  fn mag(&self) -> f64 {
+  pub fn mag(&self) -> f64 {
     self.re * self.re + self.im + self.im
   }
 }

@@ -1,9 +1,9 @@
 use std::fmt;
 #[derive(Debug, Copy, Clone, PartialEq)]
-struct Pixel {
-  r: u8,
-  g: u8,
-  b: u8,
+pub struct Pixel {
+  pub r: u8,
+  pub g: u8,
+  pub b: u8,
 }
 
 impl fmt::Display for Pixel {
@@ -12,9 +12,9 @@ impl fmt::Display for Pixel {
   }
 }
 
-struct Image {
-  width: usize,
-  height: usize,
+pub struct Image {
+  pub width: usize,
+  pub height: usize,
   data: Vec<Pixel>,
 }
 
@@ -29,9 +29,8 @@ impl Image {
   }
 
   pub fn get(&self, x:usize, y:usize) -> Option<&Pixel> {
-    if x <= self.width && y <= self.height {
-      let location = &self.data[self.width * y + x];
-      Some(location)
+    if x < self.width && y < self.height {
+      Some(&self.data[self.width * y + x])
     } else {
       None
     }
@@ -39,14 +38,26 @@ impl Image {
 
   pub fn get_mut(&mut self, x: usize, y: usize) -> Option<&mut Pixel> {
     if x <= self.width && y <= self.height {
-      let location = &mut self.data[self.width * y + x];
-      Some(location)
+      Some(&mut self.data[self.width * y + x])
     } else {
       None
     }
   }
 
   pub fn get_mandelbrot_pixels(&self) -> usize {
-    1
+    let mut sum = 0;
+    let is_white_pixel = |px| px == &Pixel {
+      r: 255,
+      g: 255,
+      b: 255
+    };
+
+    for px in self.data.iter() {
+      if !is_white_pixel(px) {
+        sum += 1;
+      }
+    };
+
+    sum
   }
 }
