@@ -11,7 +11,7 @@
 ```bash
  cargo run -- <width> <height> <max_iterations>
 ```
-*max_iteraitons* is optional and set to 1024 if omitted.
+*max_iterations* is optional and set to 1024 if omitted.
 
 ### Example
 
