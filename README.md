@@ -9,6 +9,6 @@ cargo run -- <width> <height> <max_iterations>
 ```bash
 cargo run -- 525 300
 ```
-will produce the following image.
+will produce the following image:
 
 ![mandelbrot image](https://github.com/eliaskounakas/mandelbrot-algorithm/blob/main/preview_image.png)
