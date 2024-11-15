@@ -1,5 +1,8 @@
 ### Usage
 ```bash
+git clone https://github.com/eliaskounakas/mandelbrot-generator.git
+cd mandelbrot-generator
+
 cargo run -- <width> <height> <max_iterations>
 ```
 *max_iteraitons* is optional and set to 1024 by if omitted.
