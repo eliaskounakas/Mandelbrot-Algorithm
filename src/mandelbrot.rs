@@ -10,13 +10,17 @@ pub fn generate_image(width: usize, height: usize, max_iterations: usize) -> Ima
       let cx = (x as f64/width as f64 - 0.75) * 3.5;
       let cy = (y as f64/height as f64 - 0.5) * 2.0;
       let c = Complex {re: cx, im: cy};
+      let px = img.get_mut(x, y).unwrap();
 
       if check_pixel(c, max_iterations) == None {
-        let px = img.get_mut(x, y).unwrap();
         px.r = 0;
         px.b = 0;
         px.g = 0;
-      };
+      } else {
+        px.r = 255;
+        px.b = 255;
+        px.g = 255;
+      }
     };
   };
 

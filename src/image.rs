@@ -21,9 +21,9 @@ pub struct Image {
 impl Image {
   pub fn new(width: usize, height: usize) -> Image {
     let px = Pixel {
-      r: 255,
-      g: 255,
-      b: 255
+      r: 0,
+      g: 0,
+      b: 0
     };
     Image { width, height, data: vec![px; height * width]}
   }
@@ -46,14 +46,14 @@ impl Image {
 
   pub fn get_mandelbrot_pixels(&self) -> usize {
     let mut sum = 0;
-    let is_white_pixel = |px| px == &Pixel {
-      r: 255,
-      g: 255,
-      b: 255
+    let is_black_pixel = |px| px == &Pixel {
+      r: 0,
+      g: 0,
+      b: 0
     };
 
     for px in self.data.iter() {
-      if !is_white_pixel(px) {
+      if is_black_pixel(px) {
         sum += 1;
       }
     };
