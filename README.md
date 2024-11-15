@@ -1,6 +1,6 @@
 ### Usage
 
-1. Clone the Repo and cd into folder
+1. Clone the repo and cd into folder
 ```bash
  git clone https://github.com/eliaskounakas/mandelbrot-generator.git
 ```
