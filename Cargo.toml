@@ -1,5 +1,5 @@
 [package]
-name = "mandelbrot_algorithm"
+name = "mandelbrot-algorithm"
 version = "0.1.0"
 edition = "2024"
 
