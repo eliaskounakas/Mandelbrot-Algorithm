@@ -1,12 +1,13 @@
 ### Usage
 
-##### Clone the Repo and cd into folder
+1. Clone the Repo and cd into folder
 ```bash
  git clone https://github.com/eliaskounakas/mandelbrot-generator.git
 ```
 ```bash
  cd mandelbrot-generator
 ```
+2. Run the generator
 ```bash
  cargo run -- <width> <height> <max_iterations>
 ```
